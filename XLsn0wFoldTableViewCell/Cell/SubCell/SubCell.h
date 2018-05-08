@@ -23,19 +23,11 @@ typedef NS_ENUM(NSInteger, CellType) {
 @property (nonatomic, assign) CellType type;
 
 @property (strong, nonatomic) UIImageView *iconImageView;
+
 @property (strong, nonatomic) UILabel *name;
 @property (strong, nonatomic) UILabel *sn;
 
-
-@property (strong, nonatomic) UILabel *time;
 @property (strong, nonatomic) UIImageView *arrow;
 
-@property (strong, nonatomic) UILabel *nowPower;
-@property (strong, nonatomic) UILabel *todayPower;
-@property (strong, nonatomic) UILabel *allPower;
-
-@property (strong, nonatomic) UILabel *nowPowerStr;
-@property (strong, nonatomic) UILabel *todayPowerStr;
-@property (strong, nonatomic) UILabel *allPowerStr;
 
 @end

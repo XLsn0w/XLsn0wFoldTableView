@@ -13,7 +13,6 @@
 #import "SuperCell.h"
 #import "SubCell.h"
 #import "ArrowIndicator.h"
-#import "WSTableviewDataModel.h"
 
 #define kWSTableViewSecondLevelObj @"secondLevelObj"
 

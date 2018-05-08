@@ -14,14 +14,17 @@
 		CD0CFF8620A12EBD005259F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CFF8520A12EBD005259F0 /* main.m */; };
 		CD0CFFA420A12F9B005259F0 /* wifi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA120A12F9A005259F0 /* wifi@2x.png */; };
 		CD0CFFA520A12F9B005259F0 /* alarm@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA220A12F9A005259F0 /* alarm@3x.png */; };
-		CD0CFFA620A12F9B005259F0 /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA320A12F9A005259F0 /* online@2x.png */; };
+		CD0CFFA620A12F9B005259F0 /* collector@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA320A12F9A005259F0 /* collector@2x.png */; };
 		CD0CFFA820A12FBC005259F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CFFA720A12FBC005259F0 /* ViewController.m */; };
 		CD92834A20A1306100EECEFE /* FoldTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92833C20A1306100EECEFE /* FoldTableView.m */; };
 		CD92834B20A1306100EECEFE /* ArrowIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92833F20A1306100EECEFE /* ArrowIndicator.m */; };
 		CD92834C20A1306100EECEFE /* SuperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92834320A1306100EECEFE /* SuperCell.m */; };
 		CD92834D20A1306100EECEFE /* SubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92834520A1306100EECEFE /* SubCell.m */; };
-		CD92834E20A1306100EECEFE /* WSTableviewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92834720A1306100EECEFE /* WSTableviewDataModel.m */; };
 		CD92835120A1324300EECEFE /* expandableImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92834F20A1324300EECEFE /* expandableImage@2x.png */; };
+		CD92835620A1781900EECEFE /* list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92835520A1781900EECEFE /* list@3x.png */; };
+		CD92835920A1846B00EECEFE /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92835720A1846A00EECEFE /* back@3x.png */; };
+		CD92835A20A1846B00EECEFE /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92835820A1846B00EECEFE /* arrow_right@2x.png */; };
+		CD92835C20A185A900EECEFE /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD92835B20A185A900EECEFE /* online@2x.png */; };
 		F6F4E27F137200C5D5D7A242 /* Pods_XLsn0wFoldTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4380A4478DA4F4DC1E9C3BC0 /* Pods_XLsn0wFoldTableView.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +42,7 @@
 		CD0CFF8520A12EBD005259F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD0CFFA120A12F9A005259F0 /* wifi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wifi@2x.png"; sourceTree = "<group>"; };
 		CD0CFFA220A12F9A005259F0 /* alarm@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@3x.png"; sourceTree = "<group>"; };
-		CD0CFFA320A12F9A005259F0 /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online@2x.png"; sourceTree = "<group>"; };
+		CD0CFFA320A12F9A005259F0 /* collector@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collector@2x.png"; sourceTree = "<group>"; };
 		CD0CFFA720A12FBC005259F0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD92833C20A1306100EECEFE /* FoldTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldTableView.m; sourceTree = "<group>"; };
 		CD92833D20A1306100EECEFE /* FoldTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldTableView.h; sourceTree = "<group>"; };
@@ -49,10 +52,12 @@
 		CD92834320A1306100EECEFE /* SuperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCell.m; sourceTree = "<group>"; };
 		CD92834420A1306100EECEFE /* SuperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCell.h; sourceTree = "<group>"; };
 		CD92834520A1306100EECEFE /* SubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCell.m; sourceTree = "<group>"; };
-		CD92834720A1306100EECEFE /* WSTableviewDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTableviewDataModel.m; sourceTree = "<group>"; };
-		CD92834820A1306100EECEFE /* WSTableviewDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTableviewDataModel.h; sourceTree = "<group>"; };
 		CD92834920A1306100EECEFE /* XLsn0wFoldTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wFoldTableHeader.h; sourceTree = "<group>"; };
 		CD92834F20A1324300EECEFE /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
+		CD92835520A1781900EECEFE /* list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@3x.png"; sourceTree = "<group>"; };
+		CD92835720A1846A00EECEFE /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		CD92835820A1846B00EECEFE /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
+		CD92835B20A185A900EECEFE /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "online@2x.png"; path = "../../Desktop/设备/assets/online@2x.png"; sourceTree = "<group>"; };
 		F1A1A57BC4EFB72DEA2A9F84 /* Pods-XLsn0wFoldTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLsn0wFoldTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLsn0wFoldTableView/Pods-XLsn0wFoldTableView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,9 +122,13 @@
 				CD0CFF8420A12EBD005259F0 /* Info.plist */,
 				CD0CFF8520A12EBD005259F0 /* main.m */,
 				CD0CFFA220A12F9A005259F0 /* alarm@3x.png */,
-				CD0CFFA320A12F9A005259F0 /* online@2x.png */,
+				CD0CFFA320A12F9A005259F0 /* collector@2x.png */,
 				CD0CFFA120A12F9A005259F0 /* wifi@2x.png */,
 				CD92834F20A1324300EECEFE /* expandableImage@2x.png */,
+				CD92835520A1781900EECEFE /* list@3x.png */,
+				CD92835820A1846B00EECEFE /* arrow_right@2x.png */,
+				CD92835720A1846A00EECEFE /* back@3x.png */,
+				CD92835B20A185A900EECEFE /* online@2x.png */,
 			);
 			path = XLsn0wFoldTableView;
 			sourceTree = "<group>";
@@ -128,9 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				CD92834920A1306100EECEFE /* XLsn0wFoldTableHeader.h */,
+				CD92833E20A1306100EECEFE /* ArrowIndicator */,
 				CD92833B20A1306100EECEFE /* TableView */,
 				CD92834120A1306100EECEFE /* Cell */,
-				CD92834620A1306100EECEFE /* DataModel */,
 			);
 			path = XLsn0wFoldTableViewCell;
 			sourceTree = "<group>";
@@ -138,8 +147,8 @@
 		CD92833B20A1306100EECEFE /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				CD92833C20A1306100EECEFE /* FoldTableView.m */,
 				CD92833D20A1306100EECEFE /* FoldTableView.h */,
+				CD92833C20A1306100EECEFE /* FoldTableView.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -156,20 +165,10 @@
 		CD92834120A1306100EECEFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CD92833E20A1306100EECEFE /* ArrowIndicator */,
 				CD92835320A148C700EECEFE /* SuperCell */,
 				CD92835420A148D300EECEFE /* SubCell */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		CD92834620A1306100EECEFE /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				CD92834820A1306100EECEFE /* WSTableviewDataModel.h */,
-				CD92834720A1306100EECEFE /* WSTableviewDataModel.m */,
-			);
-			path = DataModel;
 			sourceTree = "<group>";
 		};
 		CD92835320A148C700EECEFE /* SuperCell */ = {
@@ -250,12 +249,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0CFF8320A12EBD005259F0 /* LaunchScreen.storyboard in Resources */,
-				CD0CFFA620A12F9B005259F0 /* online@2x.png in Resources */,
+				CD0CFFA620A12F9B005259F0 /* collector@2x.png in Resources */,
 				CD92835120A1324300EECEFE /* expandableImage@2x.png in Resources */,
 				CD0CFF8020A12EBD005259F0 /* Assets.xcassets in Resources */,
+				CD92835C20A185A900EECEFE /* online@2x.png in Resources */,
 				CD0CFF7E20A12EBB005259F0 /* Main.storyboard in Resources */,
+				CD92835620A1781900EECEFE /* list@3x.png in Resources */,
 				CD0CFFA520A12F9B005259F0 /* alarm@3x.png in Resources */,
+				CD92835A20A1846B00EECEFE /* arrow_right@2x.png in Resources */,
 				CD0CFFA420A12F9B005259F0 /* wifi@2x.png in Resources */,
+				CD92835920A1846B00EECEFE /* back@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0CFFA820A12FBC005259F0 /* ViewController.m in Sources */,
-				CD92834E20A1306100EECEFE /* WSTableviewDataModel.m in Sources */,
 				CD92834C20A1306100EECEFE /* SuperCell.m in Sources */,
 				CD92834D20A1306100EECEFE /* SubCell.m in Sources */,
 				CD0CFF8620A12EBD005259F0 /* main.m in Sources */,

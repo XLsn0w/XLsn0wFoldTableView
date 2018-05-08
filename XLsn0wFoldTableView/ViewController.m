@@ -29,92 +29,56 @@
     [self.tableView registerClass:[SubCell class] forCellReuseIdentifier:@"SubCell"];
     
     _dataArray = [NSMutableArray array];
-    
-    WSTableviewDataModel *dataModel = [[WSTableviewDataModel alloc] init];
-    dataModel.firstLevelStr = @"医院选择";
-    dataModel.shouldExpandSubRows = NO;
-    [dataModel object_add_toSecondLevelArrM:@"逆变器"];
-    [dataModel object_add_toSecondLevelArrM:@"逆变器"];
-    [dataModel object_add_toSecondLevelArrM:@"电表"];
-    [dataModel object_add_toSecondLevelArrM:@"电表"];
-    [_dataArray addObject:dataModel];
-    
-    
-    WSTableviewDataModel *dataModel2 = [[WSTableviewDataModel alloc] init];
-    dataModel2.firstLevelStr = @"部位选择";
-    dataModel2.shouldExpandSubRows = NO;
-    [dataModel2 object_add_toSecondLevelArrM:@"逆变器"];
-    [dataModel2 object_add_toSecondLevelArrM:@"逆变器"];
-    [dataModel2 object_add_toSecondLevelArrM:@"电表"];
-    [dataModel2 object_add_toSecondLevelArrM:@"电表"];
-    [_dataArray addObject:dataModel2];
-    
-    
-    [_dataArray addObject:dataModel2];
+
 }
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_dataArray count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
     
 }
 
 - (NSInteger)tableView:(FoldTableView *)tableView numberOfSubRowsAtIndexPath:(NSIndexPath *)indexPath {
-    WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
-    return dataModel.secondLevelArrM.count;
+    return 4;
 }
 
 - (BOOL)tableView:(FoldTableView *)tableView shouldExpandSubRowsOfCellAtIndexPath:(NSIndexPath *)indexPath {
-    WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
-    return dataModel.shouldExpandSubRows;
+    return false;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
-  
     SuperCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SuperCell"];
-    cell.expandable = dataModel.expandable;
+    cell.expandable = YES;
     return cell;
 }
 
 - (UITableViewCell *)tableView:(FoldTableView *)tableView cellForSubRowAtIndexPath:(NSIndexPath *)indexPath {
-    WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
     SubCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubCell"];
-    cell.name.text = [dataModel object_get_fromSecondLevelArrMWithIndex:indexPath.subRow];
+    cell.name.text = @"逆变器";
     return cell;
 }
 
 - (CGFloat)tableView:(FoldTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 100;
 }
 
 - (CGFloat)tableView:(FoldTableView *)tableView heightForSubRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    return 70;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"row == %@", [NSString stringWithFormat:@"%ld", indexPath.row]);
-    WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
-    dataModel.shouldExpandSubRows = !dataModel.shouldExpandSubRows;
-
-    
-    SuperCell *cell = (SuperCell *)[tableView cellForRowAtIndexPath:indexPath];
-    cell.superCellBlock = ^(BOOL isShow, NSString *msg) {
-        if (isShow == true) {
-            NSLog(@"true");
-        }
-    };
+    [XLsn0wShow showCenterWithText:@"跳转采集器详情"];
 }
 
 - (void)tableView:(FoldTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"subRow == %@", [NSString stringWithFormat:@"%ld", indexPath.subRow]);
+    [XLsn0wShow showCenterWithText:@"跳转逆变器详情"];
 }
 
 #pragma mark - Actions

@@ -21,6 +21,7 @@ static CGFloat const kDefaultCellHeight = 44;
 @interface FoldTableView () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSMutableDictionary *expandableCells;
+@property (nonatomic, strong) NSIndexPath *btnIndexPath;
 
 - (NSInteger)numberOfExpandedSubrowsInSection:(NSInteger)section;
 
@@ -144,8 +145,7 @@ static CGFloat const kDefaultCellHeight = 44;
         }
         
         BOOL isExpanded = [self.expandableCells[@(correspondingIndexPath.section)][correspondingIndexPath.row][kIsExpandedKey] boolValue];
-        if (expandableCell.isExpandable)
-        {
+        if (expandableCell.isExpandable) {
             expandableCell.expanded = isExpanded;
             
             UIButton *expandableButton = (UIButton *)expandableCell.accessoryView;
@@ -188,6 +188,9 @@ static CGFloat const kDefaultCellHeight = 44;
     }
 }
 
+
+
+
 #pragma mark - Optional
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -200,149 +203,117 @@ static CGFloat const kDefaultCellHeight = 44;
     return 1;
 }
 
-/*
- *  Uncomment the implementations of the required methods.
- */
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:titleForHeaderInSection:)])
-//        return [_WSTableViewDelegate tableView:tableView titleForHeaderInSection:section];
-//    
-//    return nil;
-//}
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:titleForFooterInSection:)])
-//        return [_WSTableViewDelegate tableView:tableView titleForFooterInSection:section];
-//    
-//    return nil;
-//}
-//
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)])
-//        [_WSTableViewDelegate tableView:tableView canEditRowAtIndexPath:indexPath];
-//    
-//    return NO;
-//}
-//
-//- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:canMoveRowAtIndexPath:)])
-//        [_WSTableViewDelegate tableView:tableView canMoveRowAtIndexPath:indexPath];
-//    
-//    return NO;
-//}
-//
-//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(sectionIndexTitlesForTableView:)])
-//        [_WSTableViewDelegate sectionIndexTitlesForTableView:tableView];
-//    
-//    return nil;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:sectionForSectionIndexTitle:atIndex:)])
-//        [_WSTableViewDelegate tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
-//    
-//    return 0;
-//}
-//
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)])
-//        [_WSTableViewDelegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
-//}
-//
-//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-//{
-//    if ([_WSTableViewDelegate respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
-//        [_WSTableViewDelegate tableView:tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
-//}
-
 #pragma mark - UITableViewDelegate
 
 #pragma mark - Optional
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)expandableButtonTouched:(id)sender event:(id)event {
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self];
     
-    SuperCell *cell = (SuperCell *)[tableView cellForRowAtIndexPath:indexPath];
+    NSIndexPath *indexPath = [self indexPathForRowAtPoint:currentTouchPosition];
     
-    if ([cell respondsToSelector:@selector(isExpandable)])
-    {
-        if (cell.isExpandable)
-        {
+    NSLog(@"indexPath === %@", indexPath);
+    
+    if (indexPath) {
+        [self tableView:self accessoryButtonTappedForRowWithIndexPath:indexPath];
+    }
+    
+    SuperCell *cell = (SuperCell *)[self cellForRowAtIndexPath:indexPath];
+    
+    if ([cell respondsToSelector:@selector(isExpandable)]) {
+        if (cell.isExpandable) {
             cell.expanded = !cell.isExpanded;
-        
+            
             NSIndexPath *_indexPath = indexPath;
             NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
-            if (cell.isExpanded && _shouldExpandOnlyOneCell)
-            {
+            if (cell.isExpanded && _shouldExpandOnlyOneCell) {
                 _indexPath = correspondingIndexPath;
                 [self collapseCurrentlyExpandedIndexPaths];
             }
-        
-            if (_indexPath)
-            {
-                NSInteger numberOfSubRows = [self numberOfSubRowsAtIndexPath:correspondingIndexPath];
             
+            if (_indexPath) {
+                NSInteger numberOfSubRows = [self numberOfSubRowsAtIndexPath:correspondingIndexPath];
+                
                 NSMutableArray *expandedIndexPaths = [NSMutableArray array];
                 NSInteger row = _indexPath.row;
                 NSInteger section = _indexPath.section;
-            
-                for (NSInteger index = 1; index <= numberOfSubRows; index++)
-                {
+                
+                for (NSInteger index = 1; index <= numberOfSubRows; index++) {
                     NSIndexPath *expIndexPath = [NSIndexPath indexPathForRow:row+index inSection:section];
                     [expandedIndexPaths addObject:expIndexPath];
                 }
-            
-                if (cell.isExpanded)
-                {
+                
+                
+                if (cell.isExpanded) {
                     [self setExpanded:YES forCellAtIndexPath:correspondingIndexPath];
                     [self insertRowsAtIndexPaths:expandedIndexPaths withRowAnimation:UITableViewRowAnimationTop];
-                }
-                else
-                {
+                } else {
                     [self setExpanded:NO forCellAtIndexPath:correspondingIndexPath];
                     [self deleteRowsAtIndexPaths:expandedIndexPaths withRowAnimation:UITableViewRowAnimationTop];
                 }
-            
+                
                 [cell accessoryViewAnimation];
             }
         }
         
-        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
-        {
+        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
             NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
             
-            if (correspondingIndexPath.subRow == 0)
-            {
-                [_foldDelegate tableView:tableView didSelectRowAtIndexPath:correspondingIndexPath];
-            }
-            else
-            {
+            if (correspondingIndexPath.subRow == 0) {
+                [_foldDelegate tableView:self didSelectRowAtIndexPath:correspondingIndexPath];
+            } else {
                 correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
                                                                    inRow:correspondingIndexPath.row
                                                                inSection:correspondingIndexPath.section];
                 [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
             }
         }
-    }
-    else
-    {
-        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)])
-        {
+        
+    } else {
+        
+        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
             NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
             correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
                                                                inRow:correspondingIndexPath.row
                                                            inSection:correspondingIndexPath.section];
             [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
         }
+        
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SuperCell *cell = (SuperCell *)[tableView cellForRowAtIndexPath:indexPath];
+
+    if ([cell respondsToSelector:@selector(isExpandable)]) {
+
+        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
+
+            if (correspondingIndexPath.subRow == 0) {
+                [_foldDelegate tableView:tableView didSelectRowAtIndexPath:correspondingIndexPath];
+            } else {
+                correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
+                                                                   inRow:correspondingIndexPath.row
+                                                               inSection:correspondingIndexPath.section];
+                [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
+            }
+        }
+
+    } else {
+
+        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
+            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
+            correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
+                                                               inRow:correspondingIndexPath.row
+                                                           inSection:correspondingIndexPath.section];
+            [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
+        }
+
     }
 }
 
