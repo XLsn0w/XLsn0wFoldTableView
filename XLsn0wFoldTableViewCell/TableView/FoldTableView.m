@@ -216,9 +216,9 @@ static CGFloat const kDefaultCellHeight = 44;
     
     NSLog(@"indexPath === %@", indexPath);
     
-    if (indexPath) {
-        [self tableView:self accessoryButtonTappedForRowWithIndexPath:indexPath];
-    }
+//    if (indexPath) {
+//        [self tableView:self accessoryButtonTappedForRowWithIndexPath:indexPath];
+//    }
     
     SuperCell *cell = (SuperCell *)[self cellForRowAtIndexPath:indexPath];
     
@@ -258,28 +258,28 @@ static CGFloat const kDefaultCellHeight = 44;
             }
         }
         
-        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
-            
-            if (correspondingIndexPath.subRow == 0) {
-                [_foldDelegate tableView:self didSelectRowAtIndexPath:correspondingIndexPath];
-            } else {
-                correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
-                                                                   inRow:correspondingIndexPath.row
-                                                               inSection:correspondingIndexPath.section];
-                [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
-            }
-        }
+//        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+//            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
+//
+//            if (correspondingIndexPath.subRow == 0) {
+//                [_foldDelegate tableView:self didSelectRowAtIndexPath:correspondingIndexPath];
+//            } else {
+//                correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
+//                                                                   inRow:correspondingIndexPath.row
+//                                                               inSection:correspondingIndexPath.section];
+//                [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
+//            }
+//        }
         
     } else {
         
-        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
-            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
-            correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
-                                                               inRow:correspondingIndexPath.row
-                                                           inSection:correspondingIndexPath.section];
-            [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
-        }
+//        if ([_foldDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
+//            NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
+//            correspondingIndexPath = [NSIndexPath indexPathForSubRow:correspondingIndexPath.subRow-1
+//                                                               inRow:correspondingIndexPath.row
+//                                                           inSection:correspondingIndexPath.section];
+//            [_foldDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
+//        }
         
     }
 }
