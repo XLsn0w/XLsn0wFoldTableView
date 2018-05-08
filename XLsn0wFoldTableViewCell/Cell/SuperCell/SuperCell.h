@@ -35,7 +35,6 @@ typedef void(^SuperCellBlock)(BOOL isShow, NSString* msg);
 @property (strong, nonatomic) UIImageView *gprs;
 
 @property (strong, nonatomic) UILabel *time;
-
 @property (strong, nonatomic) UIImageView *arrow;
 
 /**

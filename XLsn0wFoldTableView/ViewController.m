@@ -100,9 +100,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"row == %@", [NSString stringWithFormat:@"%ld", indexPath.row]);
     WSTableviewDataModel *dataModel = _dataArray[indexPath.row];
     dataModel.shouldExpandSubRows = !dataModel.shouldExpandSubRows;
-    [XLsn0wShow showCenterWithText:[NSString stringWithFormat:@"%ld", indexPath.row]];
+
     
     SuperCell *cell = (SuperCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.superCellBlock = ^(BOOL isShow, NSString *msg) {
@@ -113,8 +114,7 @@
 }
 
 - (void)tableView:(FoldTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    [XLsn0wShow showCenterWithText:[NSString stringWithFormat:@"%ld", indexPath.subRow]];
+    NSLog(@"subRow == %@", [NSString stringWithFormat:@"%ld", indexPath.subRow]);
 }
 
 #pragma mark - Actions

@@ -1,13 +1,6 @@
-//
-//  WSTableViewCell.m
-//  WSTableView
-//
-//  Created by Sakkaras on 26/12/13.
-//  Copyright (c) 2013 Sakkaras. All rights reserved.
-//
 
 #import "SuperCell.h"
-#import "WSTableViewCellIndicator.h"
+#import "ArrowIndicator.h"
 #import <Masonry/Masonry.h>
 #import <XLsn0wKit_objc/XLsn0wKit_objc.h>
 
@@ -86,15 +79,15 @@
     _time.text = @"更新于30秒";
     
     
-    _arrow = [[UIImageView alloc] init];
-    [self addSubview:_arrow];
-    [_arrow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-10);
-        make.height.mas_equalTo(12*mas_height);
-        make.width.mas_equalTo(18*mas_width);
-        make.centerY.mas_equalTo(self);
-    }];
-    _arrow.image = [UIImage imageNamed:@"arrowDown"];
+//    _arrow = [[UIImageView alloc] init];
+//    [self addSubview:_arrow];
+//    [_arrow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-10);
+//        make.height.mas_equalTo(12*mas_height);
+//        make.width.mas_equalTo(18*mas_width);
+//        make.centerY.mas_equalTo(self);
+//    }];
+//    _arrow.image = [UIImage imageNamed:@"arrowDown"];
     
     
     UIView *line = [[UIView alloc] init];
@@ -147,13 +140,12 @@ static UIImage *_image = nil;
     [super setSelected:selected animated:animated];
 }
 
-- (void)addIndicatorView
-{
+- (void)addIndicatorView {
     CGPoint point = self.accessoryView.center;
     CGRect bounds = self.accessoryView.bounds;
     
     CGRect frame = CGRectMake((point.x - CGRectGetWidth(bounds) * 1.5), point.y * 1.4, CGRectGetWidth(bounds) * 3.0, CGRectGetHeight(self.bounds) - point.y * 1.4);
-    WSTableViewCellIndicator *indicatorView = [[WSTableViewCellIndicator alloc] initWithFrame:frame];
+    ArrowIndicator *indicatorView = [[ArrowIndicator alloc] initWithFrame:frame];
     indicatorView.tag = kIndicatorViewTag;
     [self addSubview:indicatorView];
 }

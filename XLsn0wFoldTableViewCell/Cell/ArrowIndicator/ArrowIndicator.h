@@ -1,10 +1,3 @@
-//
-//  WSTableViewCellExpandedIndicatorView.h
-//  WSTableView
-//
-//  Created by Sakkaras on 04/01/14.
-//  Copyright (c) 2014 Sakkaras. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
@@ -13,7 +6,7 @@
  *  the WSTableViewCell object when it is expanded.
  */
 
-@interface WSTableViewCellIndicator : UIView
+@interface ArrowIndicator : UIView
 
 /**
  * Returns the color of the indicator view.

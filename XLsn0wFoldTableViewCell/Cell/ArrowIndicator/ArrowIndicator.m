@@ -1,17 +1,9 @@
-//
-//  WSTableViewCellExpandedIndicatorView.m
-//  WSTableView
-//
-//  Created by Sakkaras on 04/01/14.
-//  Copyright (c) 2014 Sakkaras. All rights reserved.
-//
 
-#import "WSTableViewCellIndicator.h"
+#import "ArrowIndicator.h"
 
-@implementation WSTableViewCellIndicator
+@implementation ArrowIndicator
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];

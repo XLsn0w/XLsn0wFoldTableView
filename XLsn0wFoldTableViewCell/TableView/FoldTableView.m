@@ -8,7 +8,7 @@
 
 #import "FoldTableView.h"
 #import "SuperCell.h"
-#import "WSTableViewCellIndicator.h"
+#import "ArrowIndicator.h"
 #import <objc/runtime.h>
 
 static NSString * const kIsExpandedKey = @"isExpanded";
@@ -64,10 +64,9 @@ static CGFloat const kDefaultCellHeight = 44;
     [self setSeparatorColor:[UIColor whiteColor]];
 }
 
-- (void)setSeparatorColor:(UIColor *)separatorColor
-{
+- (void)setSeparatorColor:(UIColor *)separatorColor {
     [super setSeparatorColor:separatorColor];
-    [WSTableViewCellIndicator setIndicatorColor:separatorColor];
+    [ArrowIndicator setIndicatorColor:separatorColor];
 }
 
 - (NSMutableDictionary *)expandableCells
