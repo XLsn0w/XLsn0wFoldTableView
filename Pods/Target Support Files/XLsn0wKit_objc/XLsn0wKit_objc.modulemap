@@ -1,0 +1,6 @@
+framework module XLsn0wKit_objc {
+  umbrella header "XLsn0wKit_objc-umbrella.h"
+
+  export *
+  module * { export * }
+}

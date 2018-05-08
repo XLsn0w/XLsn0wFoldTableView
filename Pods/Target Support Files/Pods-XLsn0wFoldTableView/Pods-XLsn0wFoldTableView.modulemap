@@ -1,0 +1,6 @@
+framework module Pods_XLsn0wFoldTableView {
+  umbrella header "Pods-XLsn0wFoldTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}
