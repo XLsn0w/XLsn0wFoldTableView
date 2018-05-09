@@ -16,6 +16,7 @@
 		CD0CFFA520A12F9B005259F0 /* alarm@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA220A12F9A005259F0 /* alarm@3x.png */; };
 		CD0CFFA620A12F9B005259F0 /* collector@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFFA320A12F9A005259F0 /* collector@2x.png */; };
 		CD0CFFA820A12FBC005259F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CFFA720A12FBC005259F0 /* ViewController.m */; };
+		CD7103FD20A2B52E001B3970 /* XLsn0wFoldTableView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = CD7103FC20A2B52E001B3970 /* XLsn0wFoldTableView.podspec */; };
 		CD92834A20A1306100EECEFE /* FoldTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92833C20A1306100EECEFE /* FoldTableView.m */; };
 		CD92834B20A1306100EECEFE /* ArrowIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92833F20A1306100EECEFE /* ArrowIndicator.m */; };
 		CD92834C20A1306100EECEFE /* SuperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD92834320A1306100EECEFE /* SuperCell.m */; };
@@ -44,6 +45,7 @@
 		CD0CFFA220A12F9A005259F0 /* alarm@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@3x.png"; sourceTree = "<group>"; };
 		CD0CFFA320A12F9A005259F0 /* collector@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collector@2x.png"; sourceTree = "<group>"; };
 		CD0CFFA720A12FBC005259F0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CD7103FC20A2B52E001B3970 /* XLsn0wFoldTableView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XLsn0wFoldTableView.podspec; sourceTree = "<group>"; };
 		CD92833C20A1306100EECEFE /* FoldTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldTableView.m; sourceTree = "<group>"; };
 		CD92833D20A1306100EECEFE /* FoldTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldTableView.h; sourceTree = "<group>"; };
 		CD92833F20A1306100EECEFE /* ArrowIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowIndicator.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		CD92833A20A1306100EECEFE /* XLsn0wFoldTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				CD7103FC20A2B52E001B3970 /* XLsn0wFoldTableView.podspec */,
 				CD92834920A1306100EECEFE /* XLsn0wFoldTableHeader.h */,
 				CD92833E20A1306100EECEFE /* ArrowIndicator */,
 				CD92833B20A1306100EECEFE /* TableView */,
@@ -255,6 +258,7 @@
 				CD92835C20A185A900EECEFE /* online@2x.png in Resources */,
 				CD0CFF7E20A12EBB005259F0 /* Main.storyboard in Resources */,
 				CD92835620A1781900EECEFE /* list@3x.png in Resources */,
+				CD7103FD20A2B52E001B3970 /* XLsn0wFoldTableView.podspec in Resources */,
 				CD0CFFA520A12F9B005259F0 /* alarm@3x.png in Resources */,
 				CD92835A20A1846B00EECEFE /* arrow_right@2x.png in Resources */,
 				CD0CFFA420A12F9B005259F0 /* wifi@2x.png in Resources */,
