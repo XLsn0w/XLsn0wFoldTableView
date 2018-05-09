@@ -107,11 +107,11 @@ static CGFloat const kDefaultCellHeight = 44;
     return _expandableCells;
 }
 
-- (void)refreshData
-{
+///重要
+- (void)refreshData {
     self.expandableCells = nil;
-    
-    [super reloadData];
+    [super reloadData];///必须父类UITableView去刷新
+    ///不可子类FoldTableView直接[self reloadData];
 }
 
 - (void)refreshDataWithScrollingToIndexPath:(NSIndexPath *)indexPath

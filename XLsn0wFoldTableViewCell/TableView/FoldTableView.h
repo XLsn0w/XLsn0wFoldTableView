@@ -124,8 +124,8 @@
  *
  *  @discussion It is requested to scroll to a specific position after reload data, use refreshDataWithScrollingToIndexPath: method. This method does not change scroll 
  *      position.
- */
-- (void)refreshData;
+ *////不可子类FoldTableView直接[self reloadData];
+- (void)refreshData;///必须父类UITableView去刷新
 
 /**
  * Relaod data and scroll to the given index path while collapsing already expanded index paths.
