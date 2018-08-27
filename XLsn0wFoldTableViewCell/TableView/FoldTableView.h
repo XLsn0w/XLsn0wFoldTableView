@@ -100,6 +100,9 @@
  */
 - (BOOL)tableView:(FoldTableView *)tableView shouldExpandSubRowsOfCellAtIndexPath:(NSIndexPath *)indexPath;
 
+- (CGFloat)tableView:(FoldTableView *)tableView heightForHeaderInSection:(NSInteger)section;
+- (UIView *)tableView:(FoldTableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
 @end
 
 @interface FoldTableView : UITableView
