@@ -394,35 +394,33 @@ static CGFloat const kDefaultCellHeight = 44;
 
 
 /// 截获自定义viewForHeader
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if ([_foldDelegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)])
-    {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([_foldDelegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
         return [_foldDelegate tableView:self heightForHeaderInSection:section];
-        
     }
-    
     return 0.1f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if ([_foldDelegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
         return [_foldDelegate tableView:self viewForHeaderInSection:section];
-        
     }
-    UIView *v =[[UIView alloc] initWithFrame:(CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 100))];
-    return v;
+    return [[UIView alloc] initWithFrame:(CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 40))];
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if ([_foldDelegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]){
-       return  [_foldDelegate tableView:tableView heightForFooterInSection:section];
+       return  [_foldDelegate tableView:self heightForFooterInSection:section];
     }
-    
-    
     return 0.1f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if ([_foldDelegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
+        return [_foldDelegate tableView:self viewForFooterInSection:section];
+    }
+    return [[UIView alloc] initWithFrame:(CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 40))];
 }
 //
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

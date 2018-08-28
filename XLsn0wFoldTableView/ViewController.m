@@ -34,6 +34,15 @@
 
 #pragma mark - UITableViewDataSource
 
+- (CGFloat)tableView:(FoldTableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
+}
+- (UIView *)tableView:(FoldTableView *)tableView viewForHeaderInSection:(NSInteger)section {
+   UIView *headerSection = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 40))];
+    headerSection.backgroundColor = UIColor.redColor;
+    return headerSection;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
