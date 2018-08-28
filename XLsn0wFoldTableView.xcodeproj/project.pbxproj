@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EA88E22134FA670062682E /* 效果图.png in Resources */ = {isa = PBXBuildFile; fileRef = 66EA88E12134FA660062682E /* 效果图.png */; };
 		CD0CFF7820A12EBB005259F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CFF7720A12EBB005259F0 /* AppDelegate.m */; };
 		CD0CFF7E20A12EBB005259F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFF7C20A12EBB005259F0 /* Main.storyboard */; };
 		CD0CFF8020A12EBD005259F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFF7F20A12EBD005259F0 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		4380A4478DA4F4DC1E9C3BC0 /* Pods_XLsn0wFoldTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLsn0wFoldTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66EA88E12134FA660062682E /* 效果图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "效果图.png"; sourceTree = "<group>"; };
 		BBB48E2C62BF745025B07343 /* Pods-XLsn0wFoldTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLsn0wFoldTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLsn0wFoldTableView/Pods-XLsn0wFoldTableView.release.xcconfig"; sourceTree = "<group>"; };
 		CD0CFF7320A12EBB005259F0 /* XLsn0wFoldTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLsn0wFoldTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0CFF7620A12EBB005259F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		CD92835520A1781900EECEFE /* list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@3x.png"; sourceTree = "<group>"; };
 		CD92835720A1846A00EECEFE /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
 		CD92835820A1846B00EECEFE /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
-		CD92835B20A185A900EECEFE /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "online@2x.png"; path = "../../Desktop/设备/assets/online@2x.png"; sourceTree = "<group>"; };
 		F1A1A57BC4EFB72DEA2A9F84 /* Pods-XLsn0wFoldTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLsn0wFoldTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLsn0wFoldTableView/Pods-XLsn0wFoldTableView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +118,7 @@
 				CD0CFF7720A12EBB005259F0 /* AppDelegate.m */,
 				CD0CFF7920A12EBB005259F0 /* ViewController.h */,
 				CD0CFFA720A12FBC005259F0 /* ViewController.m */,
+				66EA88E12134FA660062682E /* 效果图.png */,
 				CD0CFF7C20A12EBB005259F0 /* Main.storyboard */,
 				CD0CFF7F20A12EBD005259F0 /* Assets.xcassets */,
 				CD0CFF8120A12EBD005259F0 /* LaunchScreen.storyboard */,
@@ -129,7 +131,6 @@
 				CD92835520A1781900EECEFE /* list@3x.png */,
 				CD92835820A1846B00EECEFE /* arrow_right@2x.png */,
 				CD92835720A1846A00EECEFE /* back@3x.png */,
-				CD92835B20A185A900EECEFE /* online@2x.png */,
 			);
 			path = XLsn0wFoldTableView;
 			sourceTree = "<group>";
@@ -252,6 +253,7 @@
 			files = (
 				CD0CFF8320A12EBD005259F0 /* LaunchScreen.storyboard in Resources */,
 				CD0CFFA620A12F9B005259F0 /* collector@2x.png in Resources */,
+				66EA88E22134FA670062682E /* 效果图.png in Resources */,
 				CD92835120A1324300EECEFE /* expandableImage@2x.png in Resources */,
 				CD0CFF8020A12EBD005259F0 /* Assets.xcassets in Resources */,
 				CD0CFF7E20A12EBB005259F0 /* Main.storyboard in Resources */,

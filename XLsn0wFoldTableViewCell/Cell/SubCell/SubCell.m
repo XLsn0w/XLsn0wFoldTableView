@@ -24,12 +24,12 @@
     _iconImageView = [[UIImageView alloc] init];
     [self addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(30*mas_width);
+        make.width.mas_equalTo(30*mas_width);
         make.left.mas_equalTo(50*mas_width);
-        make.height.mas_equalTo(15*mas_height);
-        make.width.mas_equalTo(15*mas_width);
         make.top.mas_equalTo(18*mas_height);
     }];
-    _iconImageView.image = [UIImage imageNamed:@"online"];
+    _iconImageView.image = [UIImage imageNamed:@"alarm"];
     
     @WeakObj(self);
     _name = [[UILabel alloc] init];
