@@ -114,11 +114,11 @@
 		CD0CFF7520A12EBB005259F0 /* XLsn0wFoldTableView */ = {
 			isa = PBXGroup;
 			children = (
+				66EA88E12134FA660062682E /* 效果图.png */,
 				CD0CFF7620A12EBB005259F0 /* AppDelegate.h */,
 				CD0CFF7720A12EBB005259F0 /* AppDelegate.m */,
 				CD0CFF7920A12EBB005259F0 /* ViewController.h */,
 				CD0CFFA720A12FBC005259F0 /* ViewController.m */,
-				66EA88E12134FA660062682E /* 效果图.png */,
 				CD0CFF7C20A12EBB005259F0 /* Main.storyboard */,
 				CD0CFF7F20A12EBD005259F0 /* Assets.xcassets */,
 				CD0CFF8120A12EBD005259F0 /* LaunchScreen.storyboard */,

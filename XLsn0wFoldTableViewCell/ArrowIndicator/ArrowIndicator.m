@@ -3,7 +3,7 @@
 
 @implementation ArrowIndicator
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -13,13 +13,11 @@
 
 static UIColor *_indicatorColor;
 
-+ (UIColor *)indicatorColor
-{
++ (UIColor *)indicatorColor {
     return _indicatorColor;
 }
 
-+ (void)setIndicatorColor:(UIColor *)indicatorColor
-{
++ (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
 }
 
