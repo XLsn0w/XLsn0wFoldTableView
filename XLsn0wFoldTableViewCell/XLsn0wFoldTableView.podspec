@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-  s.version         = "1.0.1"
+  s.version         = "1.0.2"
 
   s.summary         = "XLsn0wFoldTableView"
   s.author          = { "XLsn0w" => "xlsn0w@outlook.com" }
