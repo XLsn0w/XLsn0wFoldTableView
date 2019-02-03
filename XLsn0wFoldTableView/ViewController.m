@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSArray *contents;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) FoldTableView *tableView;
+@property (nonatomic, strong) XLsn0wFoldTableView *tableView;
 
 @end
 
@@ -26,7 +26,7 @@
 }
 
 - (void)addFoldTableView {
-    self.tableView = [[FoldTableView alloc] initWithFrame:self.view.bounds];
+    self.tableView = [[XLsn0wFoldTableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.tableView];
     self.tableView.foldDelegate = self;
     [self.tableView registerClass:[SuperCell class] forCellReuseIdentifier:@"SuperCell"];
@@ -37,11 +37,11 @@
 
 #pragma mark - UITableViewDataSource
 
-- (CGFloat)tableView:(FoldTableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(XLsn0wFoldTableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 60;
 }
 
-- (UIView *)tableView:(FoldTableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(XLsn0wFoldTableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerSection = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 40))];
     UILabel* title = [[UILabel alloc] initWithFrame:CGRectMake(40, 10, 200, 40)];
     [headerSection addSubview:title];
@@ -60,11 +60,11 @@
     
 }
 
-- (NSInteger)tableView:(FoldTableView *)tableView numberOfSubRowsAtIndexPath:(NSIndexPath *)indexPath {
+- (NSInteger)tableView:(XLsn0wFoldTableView *)tableView numberOfSubRowsAtIndexPath:(NSIndexPath *)indexPath {
     return 4;
 }
 
-- (BOOL)tableView:(FoldTableView *)tableView shouldExpandSubRowsOfCellAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableView:(XLsn0wFoldTableView *)tableView shouldExpandSubRowsOfCellAtIndexPath:(NSIndexPath *)indexPath {
     return false;
 }
 
@@ -74,17 +74,17 @@
     return cell;
 }
 
-- (UITableViewCell *)tableView:(FoldTableView *)tableView cellForSubRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(XLsn0wFoldTableView *)tableView cellForSubRowAtIndexPath:(NSIndexPath *)indexPath {
     SubCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SubCell"];
     cell.name.text = @"逆变器";
     return cell;
 }
 
-- (CGFloat)tableView:(FoldTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(XLsn0wFoldTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
 
-- (CGFloat)tableView:(FoldTableView *)tableView heightForSubRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(XLsn0wFoldTableView *)tableView heightForSubRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
 
@@ -93,7 +93,7 @@
 //    [XLsn0wShow showCenterWithText:@"跳转采集器详情"];
 }
 
-- (void)tableView:(FoldTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(XLsn0wFoldTableView *)tableView didSelectSubRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"subRow == %@", [NSString stringWithFormat:@"%ld", indexPath.subRow]);
 //    [XLsn0wShow showCenterWithText:@"跳转逆变器详情"];
 }

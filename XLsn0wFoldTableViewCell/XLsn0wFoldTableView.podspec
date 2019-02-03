@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-  s.version         = "1.0.2"
+  s.version         = "1.0.3"
 
   s.summary         = "XLsn0wFoldTableView"
   s.author          = { "XLsn0w" => "xlsn0w@outlook.com" }
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.license         = 'MIT'
   s.platform        = :ios, "8.0"
 
-# s.dependency "XLsn0wKit_objc"
+  s.dependency "Masonry"
 
 end

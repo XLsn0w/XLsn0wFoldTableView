@@ -9,7 +9,7 @@
 #ifndef XLsn0wFoldTableHeader_h
 #define XLsn0wFoldTableHeader_h
 
-#import "FoldTableView.h"
+#import "XLsn0wFoldTableView.h"
 #import "SuperCell.h"
 #import "SubCell.h"
 #import "ArrowIndicator.h"

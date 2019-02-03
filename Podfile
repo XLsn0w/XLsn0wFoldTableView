@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'XLsn0wFoldTableView' do
     
-pod 'XLsn0wKit_objc'
+pod 'Masonry'
 
 end
 

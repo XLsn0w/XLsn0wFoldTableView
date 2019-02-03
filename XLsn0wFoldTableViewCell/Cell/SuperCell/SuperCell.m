@@ -2,7 +2,7 @@
 #import "SuperCell.h"
 #import "ArrowIndicator.h"
 #import <Masonry/Masonry.h>
-#import <XLsn0wKit_objc/XLsn0wKit_objc.h>
+#import "Masonry.h"
 
 #define kIndicatorViewTag -1
 
@@ -17,20 +17,20 @@
     if (self) {
         self.expandable = NO;
         self.expanded = NO;
-        self.backgroundColor = [UIColor xlsn0w_hexString:@"#F8F8F8"];
+//        self.backgroundColor = [UIColor xlsn0w_hexString:@"#F8F8F8"];
         [self customCell];
     }
     return self;
 }
 
 - (void)customCell {
-    @WeakObj(self);
+//    @WeakObj(self);
     _iconImageView = [[UIImageView alloc] init];
     [self addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15*mas_width);
-        make.height.mas_equalTo(41*mas_height);
-        make.width.mas_equalTo(45*mas_width);
+        make.left.mas_equalTo(15);
+        make.height.mas_equalTo(41);
+        make.width.mas_equalTo(45);
         make.centerY.mas_equalTo(self);
     }];
     _iconImageView.image = [UIImage imageNamed:@"collector"];
@@ -39,43 +39,43 @@
     _name = [[UILabel alloc] init];
     [self addSubview:_name];
     [_name mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(selfWeak.iconImageView.mas_right).offset(10);
-        make.height.mas_equalTo(10*mas_height);
-        make.top.mas_equalTo(25*mas_height);
+        make.left.mas_equalTo(self->_iconImageView.mas_right).offset(10);
+        make.height.mas_equalTo(10);
+        make.top.mas_equalTo(25);
     }];
     _name.font = [UIFont systemFontOfSize:20];
-    _name.textColor = [UIColor xlsn0w_hexString:@"#454545"];
+    _name.textColor = [UIColor blueColor];
     _name.text = @"采集器";
     
     _wifi = [[UIImageView alloc] init];
     [self addSubview:_wifi];
     [_wifi mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(selfWeak.name.mas_right).offset(10);
-        make.height.mas_equalTo(12*mas_height);
-        make.width.mas_equalTo(18*mas_width);
-        make.top.mas_equalTo(selfWeak.name);
+        make.left.mas_equalTo(self->_name.mas_right).offset(10);
+        make.height.mas_equalTo(12);
+        make.width.mas_equalTo(18);
+        make.top.mas_equalTo(self->_name);
     }];
     _wifi.image = [UIImage imageNamed:@"wifi"];
     
     _sn = [[UILabel alloc] init];
     [self addSubview:_sn];
     [_sn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(selfWeak.iconImageView.mas_right).offset(10);
-        make.height.mas_equalTo(10*mas_height);
-        make.top.mas_equalTo(selfWeak.name.mas_bottom).offset(18);
+        make.left.mas_equalTo(self->_iconImageView.mas_right).offset(10);
+        make.height.mas_equalTo(10);
+        make.top.mas_equalTo(self->_name.mas_bottom).offset(18);
     }];
     _sn.font = [UIFont systemFontOfSize:14];
-    _sn.textColor = [UIColor xlsn0w_hexString:@"#959595"];
+    _sn.textColor = [UIColor greenColor];
     _sn.text = @"567895678956789";
     
 
     UIView *line = [[UIView alloc] init];
-    line.backgroundColor = [UIColor xlsn0w_hexString:@"#ECECEC"];
+    line.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(selfWeak.iconImageView.mas_left).offset(0);
+        make.left.mas_equalTo(self->_iconImageView.mas_left).offset(0);
         make.height.mas_equalTo(0.5);
-        make.width.mas_equalTo(kScreenWidth-15);
+        make.width.mas_equalTo(300);
         make.bottom.mas_equalTo(self.mas_bottom).offset(-1);
     }];
     
