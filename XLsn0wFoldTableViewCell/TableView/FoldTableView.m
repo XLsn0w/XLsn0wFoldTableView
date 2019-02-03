@@ -2,14 +2,12 @@
 #import "FoldTableView.h"
 #import "SuperCell.h"
 #import "ArrowIndicator.h"
-#import <objc/runtime.h>
+#import "NSIndexPath+SubRow.h"
 
 static NSString * const kIsExpandedKey = @"isExpanded";
 static NSString * const kSubrowsKey = @"subrowsCount";
 
 static CGFloat const kDefaultCellHeight = 44;
-
-#pragma mark - WSTableView
 
 @interface FoldTableView () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,24 +26,19 @@ static CGFloat const kDefaultCellHeight = 44;
 
 @implementation FoldTableView
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    
     if (self) {
         _shouldExpandOnlyOneCell = NO;
     }
-    
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    
-    if (self)
-    {
+    if (self) {
         _shouldExpandOnlyOneCell = NO;
     }
-    
     return self;
 }
 
@@ -129,6 +122,7 @@ static CGFloat const kDefaultCellHeight = 44;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
+    
     if ([correspondingIndexPath subRow] == 0)
     {
         SuperCell *expandableCell = (SuperCell *)[_foldDelegate tableView:tableView cellForRowAtIndexPath:correspondingIndexPath];
@@ -677,30 +671,3 @@ static CGFloat const kDefaultCellHeight = 44;
 }
 
 @end
-
-#pragma mark - NSIndexPath (通过runtime添加属性subRow)
-
-static void *SubRowObjectKey;
-
-@implementation NSIndexPath (WSTableView)
-
-@dynamic subRow;
-
-- (NSInteger)subRow {
-    id subRowObj = objc_getAssociatedObject(self, SubRowObjectKey);
-    return [subRowObj integerValue];
-}
-
-- (void)setSubRow:(NSInteger)subRow {
-    id subRowObj = [NSNumber numberWithInteger:subRow];
-    objc_setAssociatedObject(self, SubRowObjectKey, subRowObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-+ (NSIndexPath *)indexPathForSubRow:(NSInteger)subrow inRow:(NSInteger)row inSection:(NSInteger)section {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-    indexPath.subRow = subrow;
-    return indexPath;
-}
-
-@end
-

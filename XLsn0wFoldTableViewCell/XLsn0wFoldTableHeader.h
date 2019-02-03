@@ -14,6 +14,4 @@
 #import "SubCell.h"
 #import "ArrowIndicator.h"
 
-#define kWSTableViewSecondLevelObj @"secondLevelObj"
-
 #endif /* XLsn0wFoldTableHeader_h */

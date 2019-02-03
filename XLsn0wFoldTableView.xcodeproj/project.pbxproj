@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35F804BD2206BC840072BDF3 /* NSIndexPath+SubRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F804BC2206BC840072BDF3 /* NSIndexPath+SubRow.m */; };
 		66EA88E22134FA670062682E /* 效果图.png in Resources */ = {isa = PBXBuildFile; fileRef = 66EA88E12134FA660062682E /* 效果图.png */; };
 		CD0CFF7820A12EBB005259F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0CFF7720A12EBB005259F0 /* AppDelegate.m */; };
 		CD0CFF7E20A12EBB005259F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0CFF7C20A12EBB005259F0 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35F804BB2206BC840072BDF3 /* NSIndexPath+SubRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+SubRow.h"; sourceTree = "<group>"; };
+		35F804BC2206BC840072BDF3 /* NSIndexPath+SubRow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+SubRow.m"; sourceTree = "<group>"; };
 		4380A4478DA4F4DC1E9C3BC0 /* Pods_XLsn0wFoldTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLsn0wFoldTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66EA88E12134FA660062682E /* 效果图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "效果图.png"; sourceTree = "<group>"; };
 		BBB48E2C62BF745025B07343 /* Pods-XLsn0wFoldTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLsn0wFoldTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLsn0wFoldTableView/Pods-XLsn0wFoldTableView.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +78,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35CA238F2206C1F600DBCE19 /* NSIndexPath+SubRow */ = {
+			isa = PBXGroup;
+			children = (
+				35F804BB2206BC840072BDF3 /* NSIndexPath+SubRow.h */,
+				35F804BC2206BC840072BDF3 /* NSIndexPath+SubRow.m */,
+			);
+			path = "NSIndexPath+SubRow";
+			sourceTree = "<group>";
+		};
+		35CA23902206C21700DBCE19 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				CD0CFFA220A12F9A005259F0 /* alarm@3x.png */,
+				CD0CFFA320A12F9A005259F0 /* collector@2x.png */,
+				CD0CFFA120A12F9A005259F0 /* wifi@2x.png */,
+				CD92834F20A1324300EECEFE /* expandableImage@2x.png */,
+				CD92835520A1781900EECEFE /* list@3x.png */,
+				CD92835820A1846B00EECEFE /* arrow_right@2x.png */,
+				CD92835720A1846A00EECEFE /* back@3x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		6410CF5B023895A5F9FFEDC0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +140,6 @@
 		CD0CFF7520A12EBB005259F0 /* XLsn0wFoldTableView */ = {
 			isa = PBXGroup;
 			children = (
-				66EA88E12134FA660062682E /* 效果图.png */,
 				CD0CFF7620A12EBB005259F0 /* AppDelegate.h */,
 				CD0CFF7720A12EBB005259F0 /* AppDelegate.m */,
 				CD0CFF7920A12EBB005259F0 /* ViewController.h */,
@@ -124,13 +149,8 @@
 				CD0CFF8120A12EBD005259F0 /* LaunchScreen.storyboard */,
 				CD0CFF8420A12EBD005259F0 /* Info.plist */,
 				CD0CFF8520A12EBD005259F0 /* main.m */,
-				CD0CFFA220A12F9A005259F0 /* alarm@3x.png */,
-				CD0CFFA320A12F9A005259F0 /* collector@2x.png */,
-				CD0CFFA120A12F9A005259F0 /* wifi@2x.png */,
-				CD92834F20A1324300EECEFE /* expandableImage@2x.png */,
-				CD92835520A1781900EECEFE /* list@3x.png */,
-				CD92835820A1846B00EECEFE /* arrow_right@2x.png */,
-				CD92835720A1846A00EECEFE /* back@3x.png */,
+				66EA88E12134FA660062682E /* 效果图.png */,
+				35CA23902206C21700DBCE19 /* icons */,
 			);
 			path = XLsn0wFoldTableView;
 			sourceTree = "<group>";
@@ -140,6 +160,7 @@
 			children = (
 				CD7103FC20A2B52E001B3970 /* XLsn0wFoldTableView.podspec */,
 				CD92834920A1306100EECEFE /* XLsn0wFoldTableHeader.h */,
+				35CA238F2206C1F600DBCE19 /* NSIndexPath+SubRow */,
 				CD92833E20A1306100EECEFE /* ArrowIndicator */,
 				CD92833B20A1306100EECEFE /* TableView */,
 				CD92834120A1306100EECEFE /* Cell */,
@@ -326,6 +347,7 @@
 			files = (
 				CD0CFFA820A12FBC005259F0 /* ViewController.m in Sources */,
 				CD92834C20A1306100EECEFE /* SuperCell.m in Sources */,
+				35F804BD2206BC840072BDF3 /* NSIndexPath+SubRow.m in Sources */,
 				CD92834D20A1306100EECEFE /* SubCell.m in Sources */,
 				CD0CFF8620A12EBD005259F0 /* main.m in Sources */,
 				CD92834B20A1306100EECEFE /* ArrowIndicator.m in Sources */,

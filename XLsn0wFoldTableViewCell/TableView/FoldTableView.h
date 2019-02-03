@@ -10,7 +10,7 @@
 
 @required
 - (NSInteger)tableView:(FoldTableView *)tableView numberOfSubRowsAtIndexPath:(NSIndexPath *)indexPath;
-- (UITableViewCell *)tableView:(FoldTableView *)tableView cellForSubRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(FoldTableView *)tableView cellForSubRowAtIndexPath:(NSIndexPath *)indexPath;///NSIndexPath可以获取SubRow
 
 @optional
 - (CGFloat)tableView:(FoldTableView *)tableView heightForSubRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -34,6 +34,9 @@
  *  @discussion You must set only this protocol for the delegation and the datasource of WSTableView instance.
  */
 @property (nonatomic, weak) id<FoldTableViewDelegate> foldDelegate;
+
+
+
 
 /**
  * A Boolean value indicating whether only one cell can be expanded at a time.
@@ -62,29 +65,5 @@
  * Collapses all currently-expanded cells in the tableview altogether. No subrow is displayed, just main rows.
  */
 - (void)collapseCurrentlyExpandedIndexPaths;
-
-@end
-
-#pragma mark - NSIndexPath (WSTableView)
-
-@interface NSIndexPath (WSTableView)
-
-/**
- * Subrow number of the indexPath for any cell object.
- */
-@property (nonatomic, assign) NSInteger subRow;
-
-/**
- * Initializes the newly-allocated NSIndexPath object with the given parameters.
- *
- *  @param subrow Subrow of the NSIndexPath object.
- *
- *  @param row Row of the NSIndexPath object.
- *
- *  @param section Section of the NSIndexPath object.
- *
- *  @return An initialized NSIndexPath object.
- */
-+ (NSIndexPath *)indexPathForSubRow:(NSInteger)subrow inRow:(NSInteger)row inSection:(NSInteger)section;
 
 @end
